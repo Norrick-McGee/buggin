@@ -39,3 +39,11 @@ func get_nodes_to_draw(focus_position):
 # ------------------
 # Battle Scene Logic
 # ------------------
+
+
+# ------------------
+# Debugging message
+# ------------------
+func debug():
+	print("Server status: OK")
+	

@@ -16,3 +16,8 @@ func draw_nodes(nodes_to_draw):
 	get_node("Actor").position = node['position']
 	
 	pass
+# ------------------
+# Debugging message
+# ------------------
+func debug():
+	print("Overworld status: OK")

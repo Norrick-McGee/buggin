@@ -2,7 +2,7 @@ extends Node2D
 
 onready var startScreen = get_node("StartScreen")
 onready var gameManager = get_node("GameManager")
-onready var Server = get_node("Server")
+onready var Server = get_node("GameManager/Server")
 
 const DEFAULT_NAME = "Beelon Musk"
 
@@ -45,3 +45,13 @@ func _ready():
 	Returns:
 		returnValue(Array[String])
 	"""
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("debug_print"):
+		print("---------------------")
+		print("Debugging Diagnostics")
+		print("---------------------")
+		gameManager.debug()
+		Server.debug()
+		

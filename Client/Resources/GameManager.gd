@@ -52,3 +52,12 @@ func _process(delta):
 		# BattleScene mode
 		# -------------------
 		pass
+		
+# ------------------
+# Debugging message
+# ------------------
+func debug():
+	print("Game Manager status: OK")
+	overWorld.debug()
+	# battleScene.debug()
+
