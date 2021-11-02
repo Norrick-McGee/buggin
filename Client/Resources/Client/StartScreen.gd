@@ -3,8 +3,6 @@ extends Node2D
 # Client is basically a singleton
 onready var Client = get_node("/root/Client")
 
-
-
 onready var ipTextObj = get_node("CanvasLayer/IpTextBox")
 onready var portTextObj = get_node("CanvasLayer/PortTextBox")
 onready var nameTextObj = get_node("CanvasLayer/NameTextBox")

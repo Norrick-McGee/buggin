@@ -24,6 +24,9 @@ func start():
 	# TODO: 
 	#   We need to get a "Client ID", let's just use 1234 as the place holder for now
 	self.clientID = '1234'
+	
+	# Set current camera to Overworld's player camera (this camera follows the player)
+	get_node("OverWorld/Camera2D").current = true
 
 func _process(delta):
 	# ------------------
@@ -38,7 +41,8 @@ func _process(delta):
 	
 	# We include active scene for lag reasons during multiplayer
 	message['activeScene'] = activeScene
-	Server.handle_message(message)
+	message['id'] = self.clientID
+	Server.update_player_dir(message)
 	
 	if activeScene == "OverWorld":
 		
@@ -47,8 +51,8 @@ func _process(delta):
 		# -------------------
 		# window focus is exactly where in the world we are looking.
 		# This is used so that "GameManager"/"Overworld" only render nearby nodes
-		var window_focus = Vector2(120, 120)
-		var nodes_to_draw = Server.get_nodes_to_draw(window_focus)
+		var window_center = Vector2(120, 120)
+		var nodes_to_draw = Server.get_nodes_to_draw(window_center)
 		
 		overWorld.draw_nodes(nodes_to_draw)
 		
