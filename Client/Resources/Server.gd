@@ -2,7 +2,7 @@ extends Node2D
 
 var spawn = Vector2(0,0)
 var message_queue = []
-
+var rng = RandomNumberGenerator.new()
 
 func handle_message(message):
 	message_queue.append(message)
@@ -29,8 +29,11 @@ func get_nodes_to_draw(focus_position):
 	Return:
 		list_of_nodes(Array[Dictionary])
 	"""
-	
-	return [{'id':'1234','position':Vector2(0,0)}] 
+	var player = {
+		'id':'1234',
+		'position':Vector2(rng.randi_range(0,200),rng.randi_range(0,200))
+	}
+	return [player] 
 
 
 # ------------------
