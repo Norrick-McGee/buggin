@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Resources/Actor/Actor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/OverWorld.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Overworld/OverWorld.gd" type="Script" id=2]
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource( 2 )

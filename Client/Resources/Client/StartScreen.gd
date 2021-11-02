@@ -13,5 +13,12 @@ func cleaned(s: String):
 	return s.strip_escapes()
 	
 func _on_LocalPlay_pressed():
-	Client.player_name = cleaned(nameTextObj.text)
+	"""
+	Button press start Game in Local Play mode
+	Args:
+		None
+	Returns:
+		None
+	"""
+	Client.set_player_name( cleaned(nameTextObj.text) )
 	Client.start_local()

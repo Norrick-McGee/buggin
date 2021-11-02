@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="Bug-Client"
-run/main_scene="res://Resources/Client.tscn"
+run/main_scene="res://Resources/Client/Client.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Network="*res://Resources/Network.gd"
+Network="*res://Resources/Client/Network.gd"
 
 [input]
 

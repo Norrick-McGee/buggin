@@ -8,9 +8,24 @@ const DEFAULT_NAME = "Beelon Musk"
 
 
 func connect_to(ip, port):
+	"""
+	Sets our Client's Network Peer as 'client' to an IP Addr
+	Args:
+		ip(String): Ip address to connect to
+		port(String): Port number to connect to  
+	Returns:
+		None
+	"""
 	Network.connect_to(ip, int(port))
 
 func start_local():
+	"""
+	Starts a local hosted session
+	Args:
+		None
+	Returns:
+		None
+	"""
 	# self.game_mode = 'local'
 	# loadingScreen.start()
 	gameManager.start() # if we need a loading screen, we can pass it in here, and have the gameManager handle shutting down the Loading Screen
@@ -18,3 +33,15 @@ func start_local():
 	self.remove_child(startScreen)
 	pass
 
+func set_player_name(name):
+	gameManager.player_name = name
+
+
+func _ready():
+	"""
+	Desc of the func
+	Args:
+		arg1(int): desc of arg1
+	Returns:
+		returnValue(Array[String])
+	"""
