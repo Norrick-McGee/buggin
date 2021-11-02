@@ -7,7 +7,9 @@ onready var battleScene = get_node("BattleScene")
 onready var overWorld = get_node("OverWorld")
 
 onready var player_name = Client.DEFAULT_NAME
+var clientID: String
 var activeScene = "OverWorld"
+
 
 func start():
 	"""
@@ -19,6 +21,9 @@ func start():
 	"""
 	self.activeScene = "OverWorld"
 	Server.start()
+	# TODO: 
+	#   We need to get a "Client ID", let's just use 1234 as the place holder for now
+	self.clientID = '1234'
 
 func _process(delta):
 	# ------------------
@@ -41,9 +46,9 @@ func _process(delta):
 		# overworld mode
 		# -------------------
 		# window focus is exactly where in the world we are looking.
+		# This is used so that "GameManager"/"Overworld" only render nearby nodes
 		var window_focus = Vector2(120, 120)
 		var nodes_to_draw = Server.get_nodes_to_draw(window_focus)
-		
 		
 		overWorld.draw_nodes(nodes_to_draw)
 		
@@ -57,7 +62,8 @@ func _process(delta):
 # Debugging message
 # ------------------
 func debug():
-	print("Game Manager status: OK")
+	print("Game Manager status:")
+	print("\tActive Scene: {scene}".format({"scene":self.activeScene}))
 	overWorld.debug()
 	# battleScene.debug()
 

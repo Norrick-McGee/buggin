@@ -15,7 +15,7 @@ func start():
 	Returns:
 		None
 	"""
-	# Here is where we might load from a saved state. 
+	self.load_map() 
 	pass
 
 # ------------------
@@ -35,6 +35,25 @@ func get_nodes_to_draw(focus_position):
 	}
 	return [player] 
 
+func load_map():
+	"""
+	Loads whatever map we are wanting to use
+	Side-Effects:
+		Spawns many nodes as children of self
+	"""
+	# ---------
+	# load non-players
+	# ---------
+	
+	# ---------
+	# add player
+	# ---------
+	# load(/path/to/Player.tscn)
+	# Place player at self.spawn
+	
+	# ---------
+	# add other actors (players/npcs)
+	# ---------
 
 # ------------------
 # Battle Scene Logic
