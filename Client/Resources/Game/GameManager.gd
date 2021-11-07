@@ -20,10 +20,12 @@ func start():
 		None
 	"""
 	self.activeScene = "OverWorld"
-	Server.start()
 	# TODO: 
 	#   We need to get a "Client ID", let's just use 1234 as the place holder for now
 	self.clientID = '1234'
+	
+	Server.initialize()
+	Server.initialize_player(clientID)
 	
 	# Set current camera to Overworld's player camera (this camera follows the player)
 	get_node("OverWorld/Camera2D").current = true
