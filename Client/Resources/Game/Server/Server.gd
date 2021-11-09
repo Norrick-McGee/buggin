@@ -109,10 +109,7 @@ func _physics_process(delta):
 	# for node in overworlds: node.update(import_info_dictionary)	
 	for actor in actors.values():
 		if actor.dir != Vector2(0,0):
-			# For some reason, I'm just traveling upwards when I click this :( 
-			
-			print(actor.dir*actor.speed)
-			actor.move_and_collide(actor.dir*actor.speed*delta)
+			actor.move_and_slide(actor.dir*actor.speed*100*delta)
 	pass
 
 # ------------------
